@@ -62,24 +62,24 @@ double QuadrupedInverseKinematic::calc_lyz()
     return lyz;
 }
 
-float QuadrupedInverseKinematic::calc_L_gamma()
-{
-    float gamma_1, gamma_2;
-    gamma_1=atan(pos_y/pos_z);
-    gamma_2=atan(h/lyz);
-    L_gamma = gamma_1 - gamma_2;
-    std::cout<<L_gamma<<std::endl;
-    return L_gamma;
-}
-
 float QuadrupedInverseKinematic::calc_R_gamma()
 {
     float gamma_1, gamma_2;
     gamma_1=atan(pos_y/pos_z);
     gamma_2=atan(h/lyz);
-    R_gamma = gamma_1 + gamma_2;
+    R_gamma = gamma_1 - gamma_2;
     std::cout<<R_gamma<<std::endl;
     return R_gamma;
+}
+
+float QuadrupedInverseKinematic::calc_L_gamma()
+{
+    float gamma_1, gamma_2;
+    gamma_1=atan(pos_y/pos_z);
+    gamma_2=atan(h/lyz);
+    L_gamma = gamma_1 + gamma_2;
+    std::cout<<L_gamma<<std::endl;
+    return L_gamma;
 }
 
 double QuadrupedInverseKinematic::calc_lxz()
