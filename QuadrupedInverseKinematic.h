@@ -16,7 +16,8 @@ class QuadrupedInverseKinematic
         //List the functions one by one for preserving the interface
         double calc_dyz();
         double calc_lyz();
-        float calc_gamma();
+        float calc_L_gamma();
+        float calc_R_gamma();
         double calc_lxz();
         double calc_n();
         float calc_beta();
@@ -30,7 +31,8 @@ class QuadrupedInverseKinematic
         float hu;//The length of the second link
         float hl;//The length of the third link
         //find
-        float gamma;//The first joint angle rotation angle
+        float L_gamma;//The first joint angle rotation angle of left legs
+        float R_gamma;//The first joint angle rotation angle of left legs
         float alpha;//The second joint angle rotation angle
         float beta;//The third joint angle rotation angle
         //middle parameters

@@ -31,8 +31,17 @@ QuadrupedInverseKinematic::QuadrupedInverseKinematic()
 QuadrupedInverseKinematic::~QuadrupedInverseKinematic()
 {
     std::cout<<"The result is:  "<<std::endl
+             <<"LEFT:"<<std::endl
              <<"The first joint angle rotation angle gamma:  "
-             <<gamma<<std::endl
+             <<L_gamma<<std::endl
+             <<"The second joint angle rotation angle alpha:  "
+             <<alpha<<std::endl
+             <<"The third joint angle rotation angle beta:  "
+             <<beta<<std::endl
+
+             <<"RIGHT:"<<std::endl
+             <<"The first joint angle rotation angle gamma:  "
+             <<R_gamma<<std::endl
              <<"The second joint angle rotation angle alpha:  "
              <<alpha<<std::endl
              <<"The third joint angle rotation angle beta:  "
@@ -53,14 +62,24 @@ double QuadrupedInverseKinematic::calc_lyz()
     return lyz;
 }
 
-float QuadrupedInverseKinematic::calc_gamma()
+float QuadrupedInverseKinematic::calc_L_gamma()
 {
     float gamma_1, gamma_2;
     gamma_1=atan(pos_y/pos_z);
     gamma_2=atan(h/lyz);
-    gamma = gamma_1 - gamma_2;
-    std::cout<<gamma<<std::endl;
-    return gamma;
+    L_gamma = gamma_1 - gamma_2;
+    std::cout<<L_gamma<<std::endl;
+    return L_gamma;
+}
+
+float QuadrupedInverseKinematic::calc_R_gamma()
+{
+    float gamma_1, gamma_2;
+    gamma_1=atan(pos_y/pos_z);
+    gamma_2=atan(h/lyz);
+    R_gamma = gamma_1 + gamma_2;
+    std::cout<<R_gamma<<std::endl;
+    return R_gamma;
 }
 
 double QuadrupedInverseKinematic::calc_lxz()

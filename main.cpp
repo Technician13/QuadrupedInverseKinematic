@@ -18,7 +18,8 @@ int main()
     QuadrupedInverseKinematic *p=new QuadrupedInverseKinematic;
     p->calc_dyz();
     p->calc_lyz();
-    p->calc_gamma();
+    p->calc_L_gamma();
+    p->calc_R_gamma();
     p->calc_lxz();
     p->calc_n();
     p->calc_beta();
