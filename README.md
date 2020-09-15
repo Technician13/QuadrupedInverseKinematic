@@ -9,7 +9,7 @@
     
 <br>![images](https://github.com/Technician13/QuadrupedInverseKinematic/raw/master/images/QuadrupedParameters.png?raw=true)
 
-* Brief description of the files in the warehouse:
+* Brief description of the files in the repository:
 >* `QuadrupedInverseKinematic.cpp` contains all definitions of functions.
 >* `QuadrupedInverseKinematic.h` contains all declaration of functions and classes.
 >* `main.cpp` contains all instantiations of classes.
