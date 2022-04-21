@@ -107,7 +107,7 @@ float QuadrupedInverseKinematic::calc_alpha()
 {
     float alpha_1, alpha_2;
     alpha_1 = atan(pos_x/lyz);
-    alpha_2 = -atan((hu+n)/lxz);
+    alpha_2 = -acos((hu+n)/lxz);
     alpha = alpha_1 + alpha_2;
     std::cout<<alpha<<std::endl;
     return alpha;
